@@ -1,0 +1,19 @@
+Example 1: Creates DocBlocks in foo.php with default license, package name, etc...
+$docblockgen = new PHP_DocBlockGenerator();
+$docblockgen->generate('foo.php');
+
+Example 2: Creates Docblocks for foo.php in docfoo.php with some specific Page tags
+$param = array('license' => 'apache20', 'category' => 'PHP',
+'author' => 'John Foo', 'email' => 'jfoo@mail.com', 'year' => '1999-2007');
+$docblockgen = new PHP_DocBlockGenerator();
+$docblockgen->generate('foo.php', $param, 'docfoo.php');
+
+Example 3: Realigns DocBlock tags
+#docblockgen -A foo.php
+
+Example 4: Creates Docblocks for foo.php in docfoo.php with some specific Page tags
+#docblockgen -la -c PHP -a "John Foo" -e 'jfoo@mail.com' -y 1999-2007 foo.php docfoo.php
+
+Example 5: Get help
+#docblockgen -h
+

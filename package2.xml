@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<package version="2.0"
+  xmlns="http://pear.php.net/dtd/package-2.0"
+  xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+  <name>PHP_DocBlockGenerator</name>
+  <channel>pear.php.net</channel>
+  <summary>DocBlock Generator</summary>
+  <description>Creates the file Page block and the DocBlocks for includes, global variables, functions, parameters, classes, constants, properties and methods.
+Accepts parameters to set the category name, the package name, the author's name and email, the license, the package link, etc...
+Attempts to guess variable and parameters types.
+Aligns the DocBlock tags.
+Tags are not updated or added to existing DocBlocks but only realigned.
+The package can be run by: calling the "PHP_DocBlockGenerator" class, or by running the "docblockgen" DOS/Unix command.
+Fully tested with phpUnit. Code coverage test close to 100%.
+  </description>
+  <lead>
+    <name>Michel Corne</name>
+    <user>mcorne</user>
+    <email>mcorne@yahoo.com</email>
+    <active>yes</active>
+  </lead>
+  <date>2007-09-13</date>
+  <time>07:08:14</time>
+  <version>
+    <release>1.1.1</release>
+    <api>1.1.1</api>
+  </version>
+  <stability>
+    <release>stable</release>
+    <api>stable</api>
+  </stability>
+  <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+  <notes>* Fixed Bug #11984: static protected $variable noted correctly detected</notes>
+  <contents>
+    <dir name="/" baseinstalldir="PHP">
+      <dir name="DocBlockGenerator">
+        <file name="Align.php" role="php" />
+        <file name="Block.php" role="php" />
+        <file name="Cli.php" role="php" />
+        <file name="GetoptPlus.php" role="php" />
+        <file name="License.php" role="php" />
+        <file name="Tokens.php" role="php" />
+        <file name="Type.php" role="php" />
+      </dir>
+      <dir name="docs">
+        <file name="examples.txt" role="doc" />
+      </dir>
+      <dir name="scripts">
+        <file name="docblockgen" role="script" baseinstalldir="/">
+          <tasks:unixeol />
+          <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+        </file>
+        <file name="docblockgen.bat" role="script" baseinstalldir="/">
+          <tasks:windowseol />
+          <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
+          <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+        </file>
+      </dir>
+      <dir name="tests">
+        <file name="AllTests.php" role="test" />
+        <file name="DocBlockGeneratorTest.php" role="test" />
+        <dir name="data">
+          <file name="Parameters.php" role="test" />
+          <file name="Pear.php" role="test" />
+          <file name="TagAlignments.php" role="test" />
+          <file name="TagTypes.php" role="test" />
+        </dir>
+        <dir name="reference">
+          <file name="Parameters.php" role="test" />
+          <file name="Pear.php" role="test" />
+          <file name="TagAlignments.php" role="test" />
+          <file name="TagTypes.php" role="test" />
+        </dir>
+      </dir>
+      <file name="DocBlockGenerator.php" role="php" />
+      <file name="run.bat" role="script" baseinstalldir="/">
+        <tasks:windowseol />
+        <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
+        <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
+      </file>
+    </dir>
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.0</min>
+      </php>
+      <pearinstaller>
+        <min>1.4.0</min>
+      </pearinstaller>
+      <package>
+        <name>Console_Getopt</name>
+        <channel>pear.php.net</channel>
+      </package>
+      <package>
+        <name>PHP_CompatInfo</name>
+        <channel>pear.php.net</channel>
+      </package>
+    </required>
+  </dependencies>
+  <phprelease>
+    <installconditions>
+      <os>
+        <name>windows</name>
+      </os>
+    </installconditions>
+    <filelist>
+      <install as="docblockgen" name="scripts/docblockgen" />
+      <install as="docblockgen.bat" name="scripts/docblockgen.bat" />
+      <ignore name="run.bat" />
+    </filelist>
+  </phprelease>
+  <phprelease>
+    <filelist>
+      <install as="docblockgen" name="scripts/docblockgen" />
+      <ignore name="run.bat" />
+      <ignore name="scripts/docblockgen.bat" />
+    </filelist>
+  </phprelease>
+  <changelog>
+    <release>
+      <version>
+        <release>1.1.0</release>
+        <api>1.1.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2007-07-23</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Added enhancement request Bug #11663: implementation for 'interface'
+* Added functionality to process abstract class/function
+* Fixed generation of class version tag: @package_version@
+* Fixed BSD license text to comply with the 85 character limit per line
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.0.2</release>
+        <api>1.0.2</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2007-07-19</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Fixed Bug #11622: static private function and final class not correctly detected
+* Fixed Bug #11575: "bad interpreter" error on linux, @php_bin@ enclosed in double-quotes
+* Fixed tests to run for non PEAR install
+* Changed tests to keep generated files to make debugging easier
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.0.1</release>
+        <api>1.0.1</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2007-07-07</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Changed the AllTests main class name to comply with the QA PEAR-wide unit test</notes>
+    </release>
+    <release>
+      <version>
+        <release>1.0.0</release>
+        <api>1.0.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2007-07-06</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Initial stable release
+* Fixed regression on -A option
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.0.0RC1</release>
+        <api>1.0.0RC1</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2007-06-29</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Initial PEAR release
+* Testing with PHPUnit
+* Using PHPCompat to determine the PHP version
+* Using Consol_Getopt for the CLI
+* Various fixes and enhancements
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.2</release>
+        <api>0.2</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2007-06-11</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Split into classes
+* Various fixes and enhancements
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>0.1</release>
+        <api>0.1</api>
+      </version>
+      <stability>
+        <release>beta</release>
+        <api>beta</api>
+      </stability>
+      <date>2007-04-28</date>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Initial release in sourceforge</notes>
+    </release>
+  </changelog>
+</package>
