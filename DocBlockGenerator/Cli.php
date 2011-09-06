@@ -137,7 +137,7 @@ class PHP_DocBlockGenerator_Cli
      * @return void
      * @access public
      * @static
-     * @see    scripts/gendocbkock, scripts/gendocbkock.bat
+     * @see    scripts/gendocblock, scripts/gendocblock.bat
      */
     public static function generate()
     {

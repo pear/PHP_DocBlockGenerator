@@ -151,7 +151,7 @@ class PHP_DocBlockGenerator_Align
             // aligns the tag additional lines, splits the DocBlock into tag parts
             $tagParts = preg_split(self::tagParts, $block, -1, PREG_SPLIT_DELIM_CAPTURE);
 
-            foreach($tagParts as $i => &$part) {
+			foreach($tagParts as $i => &$part) {
                 // aligns the tag additional lines
                 if ($i != 0 and $i % 2 == 0) {
                     // tag data: not the DocBlock content before the first tag, neither a tag separator

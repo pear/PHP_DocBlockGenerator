@@ -165,6 +165,7 @@ class PHP_DocBlockGenerator_Block
      * @access private
      */
     private $phpVersion = array(// /
+		0 => 'PHP version unknown',
         '3' => 'PHP version 3',
         '4' => 'PHP versions 4 and 5',
         '5' => 'PHP version 5',
@@ -586,7 +587,7 @@ class PHP_DocBlockGenerator_Block
         $text = $this->licenseText;
         // sets the PHP version test
         $phpVersion = isset($this->phpVersion[$this->tokens->phpVersion])?
-        $this->phpVersion[$this->tokens->phpVersion] : 'PHP version unknow';
+        $this->phpVersion[$this->tokens->phpVersion] : $this->phpVersion[0];
         // adds the default description and the PHP file version to the DocBlock
         $block = array($this->description['short'], '', $this->description['long'], '', $phpVersion, '');
         // adds the license text and the tags to the DocBlock

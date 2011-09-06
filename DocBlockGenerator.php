@@ -48,8 +48,8 @@
  * @see       http://manual.phpdoc.org
  * @todo      process VIM header/footer
  * @todo      process multiple files/directories
- * @toto      build other files page DocBlocks from the main file/class page DocBlock
- * @toto      write a simple web interface
+ * @todo      build other files page DocBlocks from the main file/class page DocBlock
+ * @todo      write a simple web interface
  */
 
 require_once 'PHP/DocBlockGenerator/Tokens.php';
