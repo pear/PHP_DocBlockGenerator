@@ -123,6 +123,9 @@ class PHP_DocBlockGenerator_Align
         // fixes PHPEdit 2.x beautifier bug!
         $block = preg_replace('~\$ +&~', '&', $block);
 
+		// is it a PageBlock?
+		$isPageBlock = (strpos($block, '@package') !== false);
+
         if (preg_match_all(self::tags, $block, $matches)) {
             // extracts the tags from the DocBlock
             list(, , , $tags, , $types, , $vars) = array_pad($matches, 10, '');
@@ -174,7 +177,32 @@ class PHP_DocBlockGenerator_Align
                     $part = implode('', $tagLines);
                 }
             }
-            $block = implode('', $tagParts);
+			$block = implode('', $tagParts);
+			if ($isPageBlock) {
+				// Ordering for Page DocBlock
+				$tagParts = preg_split(self::tagParts, $block, -1, PREG_SPLIT_DELIM_CAPTURE);
+				$firstTag = '';
+				$orderedTags = array();
+				$otherTags = array();
+				$lastTag = '';
+				foreach($tagParts as $i => $part) {
+					list($tag) = explode(' ', $part, 2); // extracts the tag
+					if ($part[0] == '/') { $firstTag=$part; }
+					elseif ($part[strlen($part)] == '/') { $lastTag=$tagParts[$i-1].$part; }
+					elseif ($tag == 'category') { $orderedTags[1]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'package') { $orderedTags[2]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'author') { $orderedTags[3]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'copyright') { $orderedTags[4]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'license') { $orderedTags[5]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'version') { $orderedTags[6]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'link') { $orderedTags[7]=$tagParts[$i-1].$part; }
+					elseif ($tag == 'see') { $orderedTags[8]=$tagParts[$i-1].$part; }
+					elseif ($part[0] != ' ') { $otherTags[]=$tagParts[$i-1].$part; }
+				}
+				ksort($orderedTags);
+				sort($otherTags);
+				$block = $firstTag.implode('', $orderedTags).implode('', $otherTags).$lastTag;
+			}
         }
 
         return $block;
