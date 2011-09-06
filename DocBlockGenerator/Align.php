@@ -187,8 +187,8 @@ class PHP_DocBlockGenerator_Align
 				$lastTag = '';
 				foreach($tagParts as $i => $part) {
 					list($tag) = explode(' ', $part, 2); // extracts the tag
-					if ($part[0] == '/') { $firstTag=$part; }
-					elseif ($part[strlen($part)] == '/') { $lastTag=$tagParts[$i-1].$part; }
+					if ($part == $tagParts[0]) { $firstTag=$part; }
+					elseif ($part == $tagParts[count($tagParts)-1]) { $lastTag=$tagParts[$i-1].$part; }
 					elseif ($tag == 'category') { $orderedTags[1]=$tagParts[$i-1].$part; }
 					elseif ($tag == 'package') { $orderedTags[2]=$tagParts[$i-1].$part; }
 					elseif ($tag == 'author') { $orderedTags[3]=$tagParts[$i-1].$part; }
