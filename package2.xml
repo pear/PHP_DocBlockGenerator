@@ -50,6 +50,13 @@ Fully tested with phpUnit. Code coverage test close to 100%.
       <dir name="docs">
         <file name="examples.txt" role="doc" />
       </dir>
+		<dir name="licenses">
+			<file name="apache20.txt" role="data" ></file>
+			<file name="bsd.txt" role="data" ></file>
+			<file name="lgpl21.txt" role="data" ></file>
+			<file name="mit.txt" role="data" ></file>
+			<file name="php301.txt" role="data" ></file>
+		</dir> <!-- /licenses -->
       <dir name="scripts">
         <file name="docblockgen" role="script" baseinstalldir="/">
           <tasks:unixeol />
