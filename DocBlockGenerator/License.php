@@ -95,7 +95,6 @@ class PHP_DocBlockGenerator_License
         foreach ($this->license as $sId => &$aData) {
 			$sPath = PEAR_INSTALL_DIR . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'PHP_DocBlockGenerator' . DIRECTORY_SEPARATOR . 'licenses';
             $sFile = $sPath . DIRECTORY_SEPARATOR . $sId . '.txt';
-			echo "$sFile\n";
 			if (file_exists($sFile) && is_readable($sFile)) {
 				$this->license[$sId]['text'] = file($sFile,FILE_IGNORE_NEW_LINES);
 			}
