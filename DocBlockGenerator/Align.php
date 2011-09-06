@@ -107,6 +107,14 @@ class PHP_DocBlockGenerator_Align
      */
     private $varToAlign = array('@param');
 
+	/**
+     * Are we handling a PageBlock?
+     *
+     * @var    bool
+     * @access private
+     */
+    private $isPageBlock = false;
+
     /**
      * Aligns the tags within a DocBlock
      *
@@ -124,7 +132,7 @@ class PHP_DocBlockGenerator_Align
         $block = preg_replace('~\$ +&~', '&', $block);
 
 		// is it a PageBlock?
-		$isPageBlock = (strpos($block, '@package') !== false);
+		$this->isPageBlock = (strpos($block, '@package') !== false);
 
         if (preg_match_all(self::tags, $block, $matches)) {
             // extracts the tags from the DocBlock
@@ -178,7 +186,7 @@ class PHP_DocBlockGenerator_Align
                 }
             }
 			$block = implode('', $tagParts);
-			if ($isPageBlock) {
+			if ($this->isPageBlock) {
 				// Ordering for Page DocBlock
 				$tagParts = preg_split(self::tagParts, $block, -1, PREG_SPLIT_DELIM_CAPTURE);
 				$firstTag = '';
@@ -221,7 +229,8 @@ class PHP_DocBlockGenerator_Align
     {
         list(, $star , , $tag, , $type, , $var, , $rest) = array_pad($matches, 10, '');
         // adds the "*" and the padded tag
-        $string = $star . ' ' . str_pad($tag, $this->tagPadding);
+        $string = $star . ' ';
+		$string .= $this->isPageBlock ? str_pad($tag, $this->tagPadding) : $tag;
 
         if ($type) {
             // pads the tag data/type, adds tag additional data
