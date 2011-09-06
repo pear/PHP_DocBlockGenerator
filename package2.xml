@@ -78,11 +78,6 @@ Fully tested with phpUnit. Code coverage test close to 100%.
         </dir>
       </dir>
       <file name="DocBlockGenerator.php" role="php" />
-      <file name="run.bat" role="script" baseinstalldir="/">
-        <tasks:windowseol />
-        <tasks:replace from="@bin_dir@" to="bin_dir" type="pear-config" />
-        <tasks:replace from="@php_bin@" to="php_bin" type="pear-config" />
-      </file>
     </dir>
   </contents>
   <dependencies>
@@ -112,13 +107,11 @@ Fully tested with phpUnit. Code coverage test close to 100%.
     <filelist>
       <install as="docblockgen" name="scripts/docblockgen" />
       <install as="docblockgen.bat" name="scripts/docblockgen.bat" />
-      <ignore name="run.bat" />
     </filelist>
   </phprelease>
   <phprelease>
     <filelist>
       <install as="docblockgen" name="scripts/docblockgen" />
-      <ignore name="run.bat" />
       <ignore name="scripts/docblockgen.bat" />
     </filelist>
   </phprelease>
