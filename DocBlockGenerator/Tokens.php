@@ -147,7 +147,7 @@ class PHP_DocBlockGenerator_Tokens
     public function __construct()
     {
         $this->block = new PHP_DocBlockGenerator_Block($this);
-        $this->info = new PHP_CompatInfo;
+        $this->info = new PHP_CompatInfo(NULL);
     }
 
     /**
