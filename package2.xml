@@ -24,18 +24,32 @@ Fully tested with phpUnit. Code coverage test close to 100%.
     <email>mcorne@yahoo.com</email>
     <active>yes</active>
   </lead>
-  <date>2007-09-13</date>
-  <time>07:08:14</time>
-  <version>
-    <release>1.1.1</release>
-    <api>1.1.1</api>
-  </version>
-  <stability>
-    <release>stable</release>
-    <api>stable</api>
-  </stability>
-  <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
-  <notes>* Fixed Bug #11984: static protected $variable noted correctly detected</notes>
+  <helper>
+    <name>Daniel Convissor</name>
+    <user>danielc</user>
+    <email>danielc@php.net</email>
+    <active>no</active>
+  </helper>
+
+      <!-- Nested for easy copying to changelog. -->
+      <date>2011-12-11</date>
+      <version>
+        <release>1.1.2</release>
+        <api>1.1.1</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>
+* Request 14162: Want to use other licenses.
+* Bug 15490: Eliminate var_export() output from PHP_CompatInfo.
+* Bug 16181: Ordering issues.
+* Bug 16193: Expected 1 space before variable type.
+* Bug 18980: Get test suite working again.
+      </notes>
+
   <contents>
     <dir name="/">
       <dir name="PHP">
@@ -129,7 +143,23 @@ Fully tested with phpUnit. Code coverage test close to 100%.
       <ignore name="scripts/docblockgen.bat" />
     </filelist>
   </phprelease>
+
   <changelog>
+
+    <release>
+      <date>2007-09-13</date>
+      <version>
+        <release>1.1.1</release>
+        <api>1.1.1</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
+      <notes>* Fixed Bug #11984: static protected $variable noted correctly detected</notes>
+    </release>
+
     <release>
       <version>
         <release>1.1.0</release>
