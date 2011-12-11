@@ -24,6 +24,12 @@ Fully tested with phpUnit. Code coverage test close to 100%.
     <email>mcorne@yahoo.com</email>
     <active>yes</active>
   </lead>
+  <lead>
+    <name>James Wade</name>
+    <user>hm2k</user>
+    <email>hm2k@php.net</email>
+    <active>yes</active>
+  </lead>
   <helper>
     <name>Daniel Convissor</name>
     <user>danielc</user>
