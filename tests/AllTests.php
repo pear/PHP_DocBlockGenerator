@@ -34,15 +34,20 @@
  * @version   SVN: $Id: AllTests.php 30 2007-07-23 16:46:42Z mcorne $
  * @link      http://pear.php.net/package/PHP_DocBlockGenerator
  */
-if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'PHP_DocBlockGenerator_AllTests::main');
+
+// Keep tests from running twice when calling this file directly via PHPUnit.
+$call_main = false;
+if (strpos($_SERVER['argv'][0], 'phpunit') === false) {
+    // Called via php, not PHPUnit.  Pass the request to PHPUnit.
+    if (!defined('PHPUnit_MAIN_METHOD')) {
+        /** The test's main method name */
+        define('PHPUnit_MAIN_METHOD', 'PHP_DocBlockGenerator_AllTests::main');
+        $call_main = true;
+    }
 }
 
-require_once 'PHPUnit/Framework.php';
-require_once 'PHPUnit/TextUI/TestRunner.php';
-// adds the path of the package if this is a raw install
-file_exists("../../PHP/") and set_include_path('../..' . PATH_SEPARATOR . get_include_path());
-require_once 'DocBlockGeneratorTest.php';
+require_once dirname(__FILE__) . '/helper.inc';
+require_once dirname(__FILE__) . '/DocBlockGeneratorTest.php';
 
 /**
  * DocBlock Generator Test suite
@@ -87,14 +92,13 @@ class PHP_DocBlockGenerator_AllTests
      */
     public static function suite()
     {
+        $dir = dirname(__FILE__);
         $suite = new PHPUnit_Framework_TestSuite('PHP_DocBlockGenerator Tests');
-        $suite->addTestSuite('tests_DocBlockGeneratorTest');
+        $suite->addTestFile("$dir/DocBlockGeneratorTest.php");
         return $suite;
     }
 }
 
-if (PHPUnit_MAIN_METHOD == 'PHP_DocBlockGenerator_AllTests::main') {
+if ($call_main) {
     PHP_DocBlockGenerator_AllTests::main();
 }
-
-?>

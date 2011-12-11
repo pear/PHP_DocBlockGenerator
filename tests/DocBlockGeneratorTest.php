@@ -34,10 +34,19 @@
  * @version   SVN: $Id: DocBlockGeneratorTest.php 31 2007-09-13 10:21:01Z mcorne $
  * @link      http://pear.php.net/package/PHP_DocBlockGenerator
  */
-// Call tests_DocBlockGeneratorTest::main() if this source file is executed directly.
-if (!defined("PHPUnit_MAIN_METHOD")) {
-    define("PHPUnit_MAIN_METHOD", "tests_DocBlockGeneratorTest::main");
+
+// Keep tests from running twice when calling this file directly via PHPUnit.
+$call_main = false;
+if (strpos($_SERVER['argv'][0], 'phpunit') === false) {
+    // Called via php, not PHPUnit.  Pass the request to PHPUnit.
+    if (!defined('PHPUnit_MAIN_METHOD')) {
+        /** The test's main method name */
+        define('PHPUnit_MAIN_METHOD', 'tests_DocBlockGeneratorTest::main');
+        $call_main = true;
+    }
 }
+
+require_once dirname(__FILE__) . '/helper.inc';
 
 require_once "PHPUnit/Framework/TestCase.php";
 require_once "PHPUnit/Framework/TestSuite.php";
@@ -74,8 +83,6 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
      */
     public static function main()
     {
-        require_once "PHPUnit/TextUI/TestRunner.php";
-
         $suite = new PHPUnit_Framework_TestSuite("PHP_DocBlockGeneratorTest");
         $result = PHPUnit_TextUI_TestRunner::run($suite);
     }
@@ -106,7 +113,11 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
      */
     public function testTagAlign()
     {
-        ($result = $this->genDocBlockTest('TagAlignments.php')) === true or $this->fail($result);
+        $param = array(
+            'year' => '2007',
+            );
+
+        ($result = $this->genDocBlockTest('TagAlignments.php', $param)) === true or $this->fail($result);
     }
 
     /**
@@ -114,7 +125,11 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
      */
     public function testTypes()
     {
-        ($result = $this->genDocBlockTest('TagTypes.php')) === true or $this->fail($result);
+        $param = array(
+            'year' => '2007',
+            );
+
+        ($result = $this->genDocBlockTest('TagTypes.php', $param)) === true or $this->fail($result);
     }
 
     /**
@@ -122,7 +137,11 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
      */
     public function testPearFile()
     {
-        ($result = $this->genDocBlockTest('Pear.php')) === true or $this->fail($result);
+        $param = array(
+            'year' => '2007',
+            );
+
+        ($result = $this->genDocBlockTest('Pear.php', $param)) === true or $this->fail($result);
     }
 
     /**
@@ -191,9 +210,7 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
         return true;
     }
 }
-// Call tests_DocBlockGeneratorTest::main() if this source file is executed directly.
-if (PHPUnit_MAIN_METHOD == "tests_DocBlockGeneratorTest::main") {
+
+if ($call_main) {
     tests_DocBlockGeneratorTest::main();
 }
-
-?>

@@ -92,10 +92,17 @@ class PHP_DocBlockGenerator_License
      */
     public function __construct()
     {
+        if ('@data_dir@' == '@'.'data_dir'.'@') {
+            // This package hasn't been installed.  Use local files.
+            $sPath = dirname(__FILE__) . '/../../licenses';
+        } else {
+            // It has been installed.  Use the configured path.
+		    $sPath = '@data_dir@/PHP_DocBlockGenerator/licenses';
+        }
+
         foreach ($this->license as $sId => &$aData) {
-			$sPath = PEAR_INSTALL_DIR . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'PHP_DocBlockGenerator' . DIRECTORY_SEPARATOR . 'licenses';
-            $sFile = $sPath . DIRECTORY_SEPARATOR . $sId . '.txt';
-			if (file_exists($sFile) && is_readable($sFile)) {
+            $sFile = "$sPath/$sId.txt";
+			if (is_readable($sFile)) {
 				$this->license[$sId]['text'] = file($sFile,FILE_IGNORE_NEW_LINES);
 			}
 		}
