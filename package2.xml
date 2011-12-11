@@ -37,26 +37,29 @@ Fully tested with phpUnit. Code coverage test close to 100%.
   <license uri="http://www.opensource.org/licenses/bsd-license.php">The BSD License</license>
   <notes>* Fixed Bug #11984: static protected $variable noted correctly detected</notes>
   <contents>
-    <dir name="/" baseinstalldir="PHP">
-      <dir name="DocBlockGenerator">
-        <file name="Align.php" role="php" />
-        <file name="Block.php" role="php" />
-        <file name="Cli.php" role="php" />
-        <file name="GetoptPlus.php" role="php" />
-        <file name="License.php" role="php" />
-        <file name="Tokens.php" role="php" />
-        <file name="Type.php" role="php" />
-      </dir>
+    <dir name="/">
+      <dir name="PHP">
+        <dir name="DocBlockGenerator">
+          <file name="Align.php" role="php" />
+          <file name="Block.php" role="php" />
+          <file name="Cli.php" role="php" />
+          <file name="GetoptPlus.php" role="php" />
+          <file name="License.php" role="php" />
+          <file name="Tokens.php" role="php" />
+          <file name="Type.php" role="php" />
+        </dir>
+        <file name="DocBlockGenerator.php" role="php" />
+      </dir> <!-- /PHP -->
       <dir name="docs">
         <file name="examples.txt" role="doc" />
       </dir>
-		<dir name="licenses">
-			<file name="apache20.txt" role="data" ></file>
-			<file name="bsd.txt" role="data" ></file>
-			<file name="lgpl21.txt" role="data" ></file>
-			<file name="mit.txt" role="data" ></file>
-			<file name="php301.txt" role="data" ></file>
-		</dir> <!-- /licenses -->
+      <dir name="licenses">
+        <file name="apache20.txt" role="data" ></file>
+        <file name="bsd.txt" role="data" ></file>
+        <file name="lgpl21.txt" role="data" ></file>
+        <file name="mit.txt" role="data" ></file>
+        <file name="php301.txt" role="data" ></file>
+      </dir> <!-- /licenses -->
       <dir name="scripts">
         <file name="docblockgen" role="script" baseinstalldir="/">
           <tasks:unixeol />
@@ -83,8 +86,7 @@ Fully tested with phpUnit. Code coverage test close to 100%.
           <file name="TagAlignments.php" role="test" />
           <file name="TagTypes.php" role="test" />
         </dir>
-      </dir>
-      <file name="DocBlockGenerator.php" role="php" />
+      </dir> <!-- /tests -->
     </dir>
   </contents>
   <dependencies>
