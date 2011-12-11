@@ -5,7 +5,7 @@
  *
  * Long description (if any) ...
  *
- * PHP version 3
+ * PHP versions 4 and 5
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

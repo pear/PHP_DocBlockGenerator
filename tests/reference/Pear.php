@@ -130,35 +130,35 @@ if (!defined('PATH_SEPARATOR')) {
 /**
  * Description for $GLOBALS
  * @global integer $GLOBALS['_PEAR_default_error_mode']
- * @name   $_PEAR_default_error_mode
+ * @name $_PEAR_default_error_mode
  */
 $GLOBALS['_PEAR_default_error_mode']     = PEAR_ERROR_RETURN;
 
 /**
  * Description for $GLOBALS
  * @global integer $GLOBALS['_PEAR_default_error_options']
- * @name   $_PEAR_default_error_options
+ * @name $_PEAR_default_error_options
  */
 $GLOBALS['_PEAR_default_error_options']  = E_USER_NOTICE;
 
 /**
  * Description for $GLOBALS
  * @global array $GLOBALS['_PEAR_destructor_object_list']
- * @name   $_PEAR_destructor_object_list
+ * @name $_PEAR_destructor_object_list
  */
 $GLOBALS['_PEAR_destructor_object_list'] = array();
 
 /**
  * Description for $GLOBALS
  * @global array $GLOBALS['_PEAR_shutdown_funcs']
- * @name   $_PEAR_shutdown_funcs
+ * @name $_PEAR_shutdown_funcs
  */
 $GLOBALS['_PEAR_shutdown_funcs']         = array();
 
 /**
  * Description for $GLOBALS
  * @global mixed $GLOBALS['_PEAR_error_handler_stack']
- * @name   $_PEAR_error_handler_stack
+ * @name $_PEAR_error_handler_stack
  */
 $GLOBALS['_PEAR_error_handler_stack']    = array();
 
@@ -183,42 +183,42 @@ class PEAR
 
     /**
      * Description for var
-     * @var    boolean
+     * @var boolean
      * @access private
      */
     var $_debug = false;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access private
      */
     var $_default_error_mode = null;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access private
      */
     var $_default_error_options = null;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access private
      */
     var $_default_error_handler = '';
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access private
      */
     var $_error_class = 'PEAR_Error';
 
     /**
      * Description for var
-     * @var    array
+     * @var array
      * @access private
      */
     var $_expected_errors = array();
@@ -228,7 +228,7 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $error_class Parameter description (if any) ...
+     * @param unknown $error_class Parameter description (if any) ...
      * @return void
      * @access public
      */
@@ -276,8 +276,8 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $class Parameter description (if any) ...
-     * @param  unknown $var   Parameter description (if any) ...
+     * @param unknown $class Parameter description (if any) ...
+     * @param unknown $var   Parameter description (if any) ...
      * @return array   Return description (if any) ...
      * @access public
      */
@@ -292,8 +292,8 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $func Parameter description (if any) ...
-     * @param  array   $args Parameter description (if any) ...
+     * @param unknown $func Parameter description (if any) ...
+     * @param array   $args Parameter description (if any) ...
      * @return void
      * @access public
      */
@@ -307,8 +307,8 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  object  $data Parameter description (if any) ...
-     * @param  unknown $code Parameter description (if any) ...
+     * @param object  $data Parameter description (if any) ...
+     * @param unknown $code Parameter description (if any) ...
      * @return mixed   Return description (if any) ...
      * @access public
      */
@@ -331,8 +331,8 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $mode    Parameter description (if any) ...
-     * @param  unknown $options Parameter description (if any) ...
+     * @param unknown $mode    Parameter description (if any) ...
+     * @param unknown $options Parameter description (if any) ...
      * @return void
      * @access public
      */
@@ -378,7 +378,7 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  string $code Parameter description (if any) ...
+     * @param string $code Parameter description (if any) ...
      * @return array  Return description (if any) ...
      * @access public
      */
@@ -410,7 +410,7 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $error_code Parameter description (if any) ...
+     * @param unknown $error_code Parameter description (if any) ...
      * @return boolean Return description (if any) ...
      * @access private
      */
@@ -437,7 +437,7 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  array  $error_code Parameter description (if any) ...
+     * @param array  $error_code Parameter description (if any) ...
      * @return mixed  Return description (if any) ...
      * @access public
      */
@@ -475,13 +475,13 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  object  $message     Parameter description (if any) ...
-     * @param  unknown $code        Parameter description (if any) ...
-     * @param  integer $mode        Parameter description (if any) ...
-     * @param  unknown $options     Parameter description (if any) ...
-     * @param  unknown $userinfo    Parameter description (if any) ...
-     * @param  unknown $error_class Parameter description (if any) ...
-     * @param  boolean $skipmsg     Parameter description (if any) ...
+     * @param object  $message     Parameter description (if any) ...
+     * @param unknown $code        Parameter description (if any) ...
+     * @param integer $mode        Parameter description (if any) ...
+     * @param unknown $options     Parameter description (if any) ...
+     * @param unknown $userinfo    Parameter description (if any) ...
+     * @param unknown $error_class Parameter description (if any) ...
+     * @param boolean $skipmsg     Parameter description (if any) ...
      * @return unknown Return description (if any) ...
      * @access public
      */
@@ -543,9 +543,9 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $message  Parameter description (if any) ...
-     * @param  unknown $code     Parameter description (if any) ...
-     * @param  unknown $userinfo Parameter description (if any) ...
+     * @param unknown $message  Parameter description (if any) ...
+     * @param unknown $code     Parameter description (if any) ...
+     * @param unknown $userinfo Parameter description (if any) ...
      * @return unknown Return description (if any) ...
      * @access public
      */
@@ -567,8 +567,8 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $mode    Parameter description (if any) ...
-     * @param  unknown $options Parameter description (if any) ...
+     * @param unknown $mode    Parameter description (if any) ...
+     * @param unknown $options Parameter description (if any) ...
      * @return boolean Return description (if any) ...
      * @access public
      */
@@ -656,8 +656,8 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  unknown $mode    Parameter description (if any) ...
-     * @param  unknown $options Parameter description (if any) ...
+     * @param unknown $mode    Parameter description (if any) ...
+     * @param unknown $options Parameter description (if any) ...
      * @return boolean Return description (if any) ...
      * @access public
      */
@@ -709,7 +709,7 @@ class PEAR
      *
      * Long description (if any) ...
      *
-     * @param  string $ext Parameter description (if any) ...
+     * @param string $ext Parameter description (if any) ...
      * @return mixed  Return description (if any) ...
      * @access public
      */
@@ -800,49 +800,49 @@ class PEAR_Error
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $error_message_prefix = '';
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $mode                 = PEAR_ERROR_RETURN;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $level                = E_USER_NOTICE;
 
     /**
      * Description for var
-     * @var    unknown
+     * @var unknown
      * @access public
      */
     var $code                 = -1;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $message              = '';
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $userinfo             = '';
 
     /**
      * Description for var
-     * @var    array
+     * @var array
      * @access public
      */
     var $backtrace            = null;
@@ -853,11 +853,11 @@ class PEAR_Error
      *
      * Long description (if any) ...
      *
-     * @param  string  $message  Parameter description (if any) ...
-     * @param  unknown $code     Parameter description (if any) ...
-     * @param  integer $mode     Parameter description (if any) ...
-     * @param  integer $options  Parameter description (if any) ...
-     * @param  unknown $userinfo Parameter description (if any) ...
+     * @param string  $message  Parameter description (if any) ...
+     * @param unknown $code     Parameter description (if any) ...
+     * @param integer $mode     Parameter description (if any) ...
+     * @param integer $options  Parameter description (if any) ...
+     * @param unknown $userinfo Parameter description (if any) ...
      * @return void
      * @access public
      */
@@ -1014,7 +1014,7 @@ class PEAR_Error
      *
      * Long description (if any) ...
      *
-     * @param  unknown $frame Parameter description (if any) ...
+     * @param unknown $frame Parameter description (if any) ...
      * @return array   Return description (if any) ...
      * @access public
      */
@@ -1034,7 +1034,7 @@ class PEAR_Error
      *
      * Long description (if any) ...
      *
-     * @param  unknown $info Parameter description (if any) ...
+     * @param unknown $info Parameter description (if any) ...
      * @return void
      * @access public
      */

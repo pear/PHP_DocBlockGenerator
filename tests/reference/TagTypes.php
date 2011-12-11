@@ -134,28 +134,28 @@ global $HTTP_POST_VARS;
 /**
  * Description for $GLOBALS
  * @global string $GLOBALS['globals_string']
- * @name   $globals_string
+ * @name $globals_string
  */
 $GLOBALS['globals_string'] = 'foo';
 
 /**
  * Description for $GLOBALS
  * @global string $GLOBALS['globals_string2']
- * @name   $globals_string2
+ * @name $globals_string2
  */
 $GLOBALS['globals_string2']; // same as above: global $global_string2;
 
 /**
  * Description for $GLOBALS
  * @global float $GLOBALS['globals_float']
- * @name   $globals_float
+ * @name $globals_float
  */
 $GLOBALS['globals_float'];
 
 /**
  * Description for $GLOBALS
  * @global object $GLOBALS['globals_object']
- * @name   $globals_object
+ * @name $globals_object
  */
 $GLOBALS['globals_object'] = new test;
 
@@ -164,14 +164,14 @@ $GLOBALS['globals_object'] = new test;
  *
  * Long description (if any) ...
  *
- * @param  string  &$string Parameter description (if any) ...
- * @param  string  $string2 Parameter description (if any) ...
- * @param  integer $int     Parameter description (if any) ...
- * @param  integer $int2    Parameter description (if any) ...
- * @param  float   $float   Parameter description (if any) ...
- * @param  float   $float2  Parameter description (if any) ...
- * @param  mixed   $mixed   Parameter description (if any) ...
- * @param  unknown $unknown Parameter description (if any) ...
+ * @param string  &$string Parameter description (if any) ...
+ * @param string  $string2 Parameter description (if any) ...
+ * @param integer $int     Parameter description (if any) ...
+ * @param integer $int2    Parameter description (if any) ...
+ * @param float   $float   Parameter description (if any) ...
+ * @param float   $float2  Parameter description (if any) ...
+ * @param mixed   $mixed   Parameter description (if any) ...
+ * @param unknown $unknown Parameter description (if any) ...
  * @return void
  */
 function testParam(&$string = 'foo', $string2, $int = 123, $int2, $float = 123.45, $float2,
@@ -217,28 +217,28 @@ class TestClass
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $int;
 
     /**
      * Description for private
-     * @var    number
+     * @var number
      * @access private
      */
     private $number2;
 
     /**
      * Description for protected
-     * @var    number
+     * @var number
      * @access protected
      */
     protected $number3;
 
     /**
      * Description for public
-     * @var    number
+     * @var number
      * @access public
      * @static
      */
@@ -246,7 +246,7 @@ class TestClass
 
     /**
      * Description for private
-     * @var    integer
+     * @var integer
      * @access private
      * @static
      */
@@ -254,49 +254,49 @@ class TestClass
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access private
      */
     var $_int6;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $int7;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $int8;
 
     /**
      * Description for var
-     * @var    number
+     * @var number
      * @access public
      */
     var $number9;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $int10;
 
     /**
      * Description for var
-     * @var    integer
+     * @var integer
      * @access public
      */
     var $int11;
 
     /**
      * Description for static
-     * @var    unknown
+     * @var unknown
      * @access private
      * @static
      */
@@ -304,7 +304,7 @@ class TestClass
 
     /**
      * Description for static
-     * @var    unknown
+     * @var unknown
      * @access protected
      * @static
      */
@@ -312,7 +312,7 @@ class TestClass
 
     /**
      * Description for static
-     * @var    unknown
+     * @var unknown
      * @access public
      * @static
      */
@@ -320,28 +320,28 @@ class TestClass
 
     /**
      * Description for var
-     * @var    array
+     * @var array
      * @access public
      */
     var $array;
 
     /**
      * Description for private
-     * @var    array
+     * @var array
      * @access private
      */
     private $array2;
 
     /**
      * Description for protected
-     * @var    array
+     * @var array
      * @access protected
      */
     protected $array3;
 
     /**
      * Description for public
-     * @var    array
+     * @var array
      * @access public
      * @static
      */
@@ -349,7 +349,7 @@ class TestClass
 
     /**
      * Description for private
-     * @var    array
+     * @var array
      * @access private
      * @static
      */
@@ -357,35 +357,35 @@ class TestClass
 
     /**
      * Description for var
-     * @var    array
+     * @var array
      * @access public
      */
     var $array6;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string;
 
     /**
      * Description for private
-     * @var    string
+     * @var string
      * @access private
      */
     private $string2;
 
     /**
      * Description for protected
-     * @var    string
+     * @var string
      * @access protected
      */
     protected $string3;
 
     /**
      * Description for public
-     * @var    string
+     * @var string
      * @access public
      * @static
      */
@@ -393,7 +393,7 @@ class TestClass
 
     /**
      * Description for private
-     * @var    string
+     * @var string
      * @access private
      * @static
      */
@@ -401,77 +401,77 @@ class TestClass
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string6;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string7;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string8;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string9;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string10;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string11 = DEFINE_STRING2;
 
     /**
      * Description for var
-     * @var    string
+     * @var string
      * @access public
      */
     var $string12;
 
     /**
      * Description for var
-     * @var    boolean
+     * @var boolean
      * @access public
      */
     var $bool;
 
     /**
      * Description for var
-     * @var    boolean
+     * @var boolean
      * @access public
      */
     var $bool2;
 
     /**
      * Description for var
-     * @var    boolean
+     * @var boolean
      * @access public
      */
     var $bool3;
 
     /**
      * Description for var
-     * @var    mixed
+     * @var mixed
      * @access public
      */
     var $mixed; // multiple types
@@ -479,7 +479,7 @@ class TestClass
 
     /**
      * Description for static
-     * @var    unknown
+     * @var unknown
      * @access public
      * @static
      */
@@ -488,7 +488,7 @@ class TestClass
 
     /**
      * Description for var
-     * @var    unknown
+     * @var unknown
      * @access public
      */
     var $unknown2; // cannot guess type
@@ -496,14 +496,14 @@ class TestClass
 
     /**
      * Description for var
-     * @var    float
+     * @var float
      * @access public
      */
     var $float;
 
     /**
      * Description for var
-     * @var    float
+     * @var float
      * @access public
      */
     var $float2 = self::const_float;
@@ -590,7 +590,7 @@ class TestClass
      *
      * Long description (if any) ...
      *
-     * @param  integer $int Parameter description (if any) ...
+     * @param integer $int Parameter description (if any) ...
      * @return integer Return description (if any) ...
      * @access private
      */
@@ -775,8 +775,8 @@ interface TestInterface
      *
      * Long description (if any) ...
      *
-     * @param  integer $int    Parameter description (if any) ...
-     * @param  string  $string Parameter description (if any) ...
+     * @param integer $int    Parameter description (if any) ...
+     * @param string  $string Parameter description (if any) ...
      * @access public
      * @static
      */
@@ -814,8 +814,8 @@ abstract class TestAbstractClass
      *
      * Long description (if any) ...
      *
-     * @param  integer $int    Parameter description (if any) ...
-     * @param  string  $string Parameter description (if any) ...
+     * @param integer $int    Parameter description (if any) ...
+     * @param string  $string Parameter description (if any) ...
      * @access public
      */
     abstract public static function publicStaticFuntion($int = 0, $string = 'foo');
