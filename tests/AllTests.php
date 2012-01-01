@@ -47,16 +47,15 @@ if (strpos($_SERVER['argv'][0], 'phpunit') === false) {
 }
 
 require_once dirname(__FILE__) . '/helper.inc';
-require_once dirname(__FILE__) . '/DocBlockGeneratorTest.php';
 
 /**
  * DocBlock Generator Test suite
  *
- * Run the tests from the tests directory.
- * #phpunit  PHP_DocBlockGenerator_AllTests AllTests.php
+ * Run the tests from the directory above the "tests" directory.
+ * # phpunit -d error_reporting=22527 tests
  *
  * To run the code coverage test, 2 steps:
- * #phpunit --report reports/coverage  PHP_DocBlockGenerator_AllTests AllTests.php
+ * #phpunit -d error_reporting=22527 --report reports/coverage tests
  * browse the results in index.html file in reports/coverage
  *
  * The code coverage is close to 100%.
@@ -92,9 +91,11 @@ class PHP_DocBlockGenerator_AllTests
      */
     public static function suite()
     {
-        $dir = dirname(__FILE__);
         $suite = new PHPUnit_Framework_TestSuite('PHP_DocBlockGenerator Tests');
-        $suite->addTestFile("$dir/DocBlockGeneratorTest.php");
+
+        $dir = new GlobIterator(dirname(__FILE__) . '/*Test.php');
+        $suite->addTestFiles($dir);
+
         return $suite;
     }
 }

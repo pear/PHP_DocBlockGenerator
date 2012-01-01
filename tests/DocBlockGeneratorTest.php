@@ -35,21 +35,9 @@
  * @link      http://pear.php.net/package/PHP_DocBlockGenerator
  */
 
-// Keep tests from running twice when calling this file directly via PHPUnit.
-$call_main = false;
-if (strpos($_SERVER['argv'][0], 'phpunit') === false) {
-    // Called via php, not PHPUnit.  Pass the request to PHPUnit.
-    if (!defined('PHPUnit_MAIN_METHOD')) {
-        /** The test's main method name */
-        define('PHPUnit_MAIN_METHOD', 'tests_DocBlockGeneratorTest::main');
-        $call_main = true;
-    }
-}
-
 require_once dirname(__FILE__) . '/helper.inc';
 
 require_once "PHPUnit/Framework/TestCase.php";
-require_once "PHPUnit/Framework/TestSuite.php";
 
 require_once 'PHP/DocBlockGenerator.php';
 
@@ -74,18 +62,6 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
      * @access private
      */
     private $docBlockGen;
-
-    /**
-     * Runs the test methods of this class.
-     *
-     * @access public
-     * @static
-     */
-    public static function main()
-    {
-        $suite = new PHPUnit_Framework_TestSuite("PHP_DocBlockGeneratorTest");
-        $result = PHPUnit_TextUI_TestRunner::run($suite);
-    }
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -218,8 +194,4 @@ class tests_DocBlockGeneratorTest extends PHPUnit_Framework_TestCase
 
         return true;
     }
-}
-
-if ($call_main) {
-    tests_DocBlockGeneratorTest::main();
 }
