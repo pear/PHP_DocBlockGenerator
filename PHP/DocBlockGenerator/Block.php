@@ -208,7 +208,7 @@ class PHP_DocBlockGenerator_Block
         // defaults the copyright year to the current year
         $this->pageTagDefaults['year'] = date('Y');
         // sets the default version to CVS
-        $this->pageTagDefaults['version'] = 'cvs';
+        $this->pageTagDefaults['version'] = '';
         // captures the calling PHP_DocBlockGenerator_Tokens instance
         $this->tokens = $tokens;
     }
