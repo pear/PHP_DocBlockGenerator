@@ -631,10 +631,13 @@ class PHP_DocBlockGenerator_Block
             "@author {$this->pageTags['author']} <{$this->pageTags['email']}>",
             "@copyright {$this->pageTags['year']} {$this->pageTags['author']}",
             "@license $licenseURL $licenseFullName",
-            "@version $version",
-            "@link {$this->pageTags['link']}",
-            "@see {$this->pageTags['see']}",
-            );
+        );
+        if ($version != '') {
+            $tags[] = "@version $version";
+        }
+        $tags[] = "@link {$this->pageTags['link']}";
+        $tags[] = "@see {$this->pageTags['see']}";
+
         return $tags;
     }
 
