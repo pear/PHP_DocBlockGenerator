@@ -42,6 +42,9 @@
  * @see       PHP/DocBlockGenerator.php, scripts/docblockgen.bat
  */
 
+//we use a couple of non-E_STRICT compatible libs
+error_reporting(error_reporting() & ~E_STRICT & ~E_DEPRECATED);
+
 require_once 'PHP/DocBlockGenerator/Cli.php';
 PHP_DocBlockGenerator_Cli::generate();
 
