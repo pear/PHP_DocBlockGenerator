@@ -57,6 +57,11 @@ class PHP_DocBlockGenerator_License
      * @access private
      */
     private $license = array(// /
+        'agpl30' => array(// /
+            'full_name' => 'GNU Affero General Public License v3',
+            'url' => 'http://www.gnu.org/licenses/agpl.html',
+            'text' => array(),
+            ),
         'apache20' => array(// /
             'full_name' => 'The Apache License, Version 2.0',
             'url' => 'http://www.apache.org/licenses/LICENSE-2.0',
@@ -69,6 +74,11 @@ class PHP_DocBlockGenerator_License
             ),
         'lgpl21' => array(// /
             'full_name' => 'The GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1',
+            'url' => 'http://www.gnu.org/copyleft/lesser.html',
+            'text' => array(),
+            ),
+        'lgpl30' => array(// /
+            'full_name' => 'The GNU LESSER GENERAL PUBLIC LICENSE, Version 3.0',
             'url' => 'http://www.gnu.org/copyleft/lesser.html',
             'text' => array(),
             ),
