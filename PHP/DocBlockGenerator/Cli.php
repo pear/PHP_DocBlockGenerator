@@ -71,7 +71,7 @@ class PHP_DocBlockGenerator_Cli
             array('c', 'category', ':', array('name', 'The category name, e.g. PHP.', 'See http://pear.php.net/packages.php.')),
             array('e', 'email', ':', array('name@example.com', 'The author\'s email address.')),
             array('i', 'infile', ':', array('name', 'The input PHP file to process. Default: STDIN.')),
-            array('l', 'license', ':', array('apache20|bsd|lgpl21|mit|php301|*', 'The license. Default: bsd.')),
+            array('l', 'license', ':', array('agpl30|apache20|bsd|lgpl21|lgpl30|mit|php301|*', 'The license. Default: bsd.')),
             array('o', 'outfile', ':', array('name', 'The output file. Default: infile', 'or STDOUT if infile is STDIN.')),
             array('p', 'package', ':', array('name', 'The package name.', 'Default: the first 2 words of the class name.')),
             array('u', 'link', ':', array('http://...', 'The package link.', 'Default: http://pear.php.net/package/name.')),
