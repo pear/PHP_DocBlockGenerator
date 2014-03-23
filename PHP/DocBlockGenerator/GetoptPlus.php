@@ -191,7 +191,7 @@ class PHP_DocBlockGenerator_GetoptPlus
         // tidies the arguments
         $options[0] = $getopt->tidyArgs($options[0], $toLongNames, $asKeys);
         // a request for help/usage, prints the command usage
-        $options[0] == 'help' and exit(implode("\n", $getopt->setHelp($config, $command)));
+        $options[0] == 'help' and exit(implode("\n", $getopt->setHelp($config, $command)) . "\n");
 
         return $options;
     }
