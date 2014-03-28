@@ -208,7 +208,7 @@ class PHP_DocBlockGenerator_Block
         // defaults the copyright year to the current year
         $this->pageTagDefaults['year'] = date('Y');
         // sets the default version to CVS
-        $this->pageTagDefaults['version'] = 'cvs';
+        $this->pageTagDefaults['version'] = '';
         // captures the calling PHP_DocBlockGenerator_Tokens instance
         $this->tokens = $tokens;
     }
@@ -631,10 +631,13 @@ class PHP_DocBlockGenerator_Block
             "@author {$this->pageTags['author']} <{$this->pageTags['email']}>",
             "@copyright {$this->pageTags['year']} {$this->pageTags['author']}",
             "@license $licenseURL $licenseFullName",
-            "@version $version",
-            "@link {$this->pageTags['link']}",
-            "@see {$this->pageTags['see']}",
-            );
+        );
+        if ($version != '') {
+            $tags[] = "@version $version";
+        }
+        $tags[] = "@link {$this->pageTags['link']}";
+        $tags[] = "@see {$this->pageTags['see']}";
+
         return $tags;
     }
 
